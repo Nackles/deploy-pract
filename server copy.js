@@ -10,18 +10,13 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // MySQL DB Connection Information (remember to change this with our specific credentials)
-var connection;
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL); 
-} else {
-    connection = mysql.createConnection({
-        host: "localhost",
-        port: 3306,
-        user: "root",
-        password: "password",
-        database: "seinfeld"
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "password",
+  database: "seinfeld"
 });
-};
 
 // Initiate MySQL Connection.
 connection.connect(function(err) {
