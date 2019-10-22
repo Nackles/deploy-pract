@@ -3,6 +3,7 @@ var express = require("express");
 var mysql = require("mysql");
 require('dotenv');
 // Create instance of express app.
+var path = require('path');
 var app = express();
 
 // Set the port of our application
@@ -25,8 +26,9 @@ if (process.env.JAWSDB_URL) {
 
 // Initiate MySQL Connection.
 connection.connect(function(err) {
+  console.log("connected")
   if (err) {
-    console.error("error connecting: " + err.stack);
+    console.error("error connecting to server: " + err.stack);
     return;
   }
   console.log("connected as id " + connection.threadId);
