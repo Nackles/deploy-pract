@@ -1,7 +1,7 @@
 // Dependencies
 var express = require("express");
 var mysql = require("mysql");
-
+require('dotenv');
 // Create instance of express app.
 var app = express();
 
